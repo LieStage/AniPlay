@@ -18,7 +18,7 @@
     "website": "https://github.com/LieStage/",
     "repository": "https://github.com/LieStage/",
     "env": {
-        "BOT_TOKEN": {
+         "TOKEN": {
             "description": "Your bot token.",
             "required": false
         },
