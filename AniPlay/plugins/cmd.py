@@ -1,3 +1,4 @@
+import pyrogram
 from pyrogram import Client
 from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardMarkup,InlineKeyboardButton
