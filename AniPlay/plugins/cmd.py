@@ -11,10 +11,10 @@ from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 from config import API_ID,TOKEN,API_HASH
 
 
-bot_token = os.environ.get("TOKEN", "")
-api_hash = os.environ.get("HASH", "") 
-api_id = os.environ.get("ID", "")
-OWNER_ID = os.environ.get("OWNER_ID", "")
+bot_token = os.environ.get("TOKEN", "6017558004:AAGKT-Y0moOFsaisHhBoTEZYgyPgcL3s7No")
+api_hash = os.environ.get("HASH", "3eba5d471162181b8a3f7f5c0a23c307") 
+api_id = os.environ.get("ID", "4682685")
+OWNER_ID = os.environ.get("OWNER_ID", "945284066")
 ADMIN_LIST = [int(ch) for ch in (os.environ.get("ADMIN_LIST", f"{OWNER_ID}")).split()]
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "FLIGHER")
 PERMANENT_GROUP = os.environ.get("PERMANENT_GROUP", "-1002045115155")
