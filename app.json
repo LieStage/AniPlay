@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/LieStage/",
-    "repository": "https://github.com/LieStage/",
+    "website": "https://github.com/LieStage/AniPaly",
+    "repository": "https://github.com/LieStage/AniPlay",
     "env": {
          "TOKEN": {
             "description": "Your bot token.",
