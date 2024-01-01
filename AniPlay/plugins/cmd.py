@@ -9,6 +9,7 @@ from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
 from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 from config import API_ID,TOKEN,API_HASH
+import os
 
 
 bot_token = os.environ.get("TOKEN", "6017558004:AAGKT-Y0moOFsaisHhBoTEZYgyPgcL3s7No")
