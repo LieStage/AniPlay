@@ -14,8 +14,8 @@ import os
 
 
 bot_token = os.environ.get("TOKEN")
-api_hash = os.environ.get("HASH") 
-api_id = os.environ.get("ID")
+api_hash = os.environ.get("API_HASH") 
+api_id = os.environ.get("API_ID")
 OWNER_ID = os.environ.get("OWNER_ID", "945284066")
 ADMIN_LIST = [int(ch) for ch in (os.environ.get("ADMIN_LIST", f"{OWNER_ID}")).split()]
 OWNER_USERNAME = os.environ.get("OWNER_USERNAME", "FLIGHER")
