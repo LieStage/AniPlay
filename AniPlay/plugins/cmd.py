@@ -10,8 +10,8 @@ from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 @CMDErrorHandler
 async def start(_, message: Message):
     try:
-        await message.reply_text(
-            "Bot Is Online...\n\nSearch Animes Using /search or /s"
+        await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
+            "Bot Is Online...\n\nSearch Animes Using /search animename or /s animename"
         )
     except:
         return
@@ -37,7 +37,7 @@ async def searchCMD(_, message: Message):
     except Exception as e:
         print(e)
         try:
-            return await message.reply_text(
+            return await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
                 "**Anime Not Found...**\n\nProbably Incorrect Name, Try again"
             )
         except:
@@ -47,4 +47,4 @@ async def searchCMD(_, message: Message):
 @app.on_message(filters.command(["report"]))
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
-    await message.reply_text("Report Bugs Here: @TechZBots_Support")
+    await message.reply_photo("https://graph.org/file/e93e046cdc24a803990d1.jpg",caption="Report Bugs Here: @TRUMBOTS")
