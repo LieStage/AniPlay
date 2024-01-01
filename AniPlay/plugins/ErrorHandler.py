@@ -9,7 +9,7 @@ def CMDErrorHandler(func):
             print(message.from_user.id, str(e))
             try:
                 await message.reply_text(
-                    "Something went wrong.\n\nReport @TechZBots_Support"
+                    "Something went wrong.\n\nReport @Trumbot_Support"
                 )
             except:
                 pass
@@ -26,7 +26,7 @@ def CBErrorHandler(func):
             print(query.from_user.id, str(e))
             try:
                 await query.message.edit(
-                    "Something went wrong.\n\nReport @TechZBots_Support"
+                    "Something went wrong.\n\nReport @Trumbot_Support"
                 )
             except:
                 pass
