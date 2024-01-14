@@ -21,8 +21,7 @@ async def start(_, message: Message):
     reply_markup = InlineKeyboardMarkup(buttons)
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
-            """𝑯𝒊 𝑰 𝒂𝒎 𝑨𝑵𝑰𝑴𝑬♨︎_♨︎ 𝑺𝒆𝒂𝒓𝒄𝒉 𝑩𝒐𝒕 
-            𝑰 𝑪𝒂𝒏 𝑷𝒓𝒐𝒗𝒊𝒅𝒆 𝑨𝒏𝒊𝒎𝒆𝒔 𝒘𝒊𝒕𝒉 𝑺𝒕𝒓𝒆𝒂𝒎😄 𝒂𝒏𝒅 𝑫𝒐𝒘𝒏𝒍𝒂𝒐𝒅 📥 𝑶𝒑𝒕𝒊𝒐𝒏 𝑪𝒍𝒊𝒄𝒌 /use""",reply_markup=reply_markup
+            """𝑯𝒊 𝑰 𝒂𝒎 𝑨𝑵𝑰𝑴𝑬♨︎_♨︎ 𝑺𝒆𝒂𝒓𝒄𝒉 𝑩𝒐𝒕  \n𝑰 𝑪𝒂𝒏 𝑷𝒓𝒐𝒗𝒊𝒅𝒆 𝑨𝒏𝒊𝒎𝒆𝒔 𝒘𝒊𝒕𝒉 𝑺𝒕𝒓𝒆𝒂𝒎😄 𝒂𝒏𝒅 𝑫𝒐𝒘𝒏𝒍𝒂𝒐𝒅📥 𝑶𝒑𝒕𝒊𝒐𝒏 \n 𝑪𝒍𝒊𝒄𝒌 /use""",reply_markup=reply_markup
         )
     except:
         return
@@ -66,6 +65,18 @@ async def reportCMD(_, message: Message):
 async def reportCMD(_, message: Message):
     buttons = [
             [
+                InlineKeyboardButton('👁️ ᴀɴɪᴍᴇꜱ', url='https://t.me/animeonlyda')
+            ]
+            ]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="""𝑰 𝒂𝒎 𝑶𝒏𝒍𝒚 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏𝒍𝒚 𝑩𝒆𝒍𝒐𝒘 𝑴𝒆𝒏𝒕𝒊𝒐𝒏𝒆𝒅 𝑮𝒓𝒐𝒖𝒑 📀
+    """,reply_markup=reply_markup)
+
+@app.on_message(filters.group & filters.command(["start", "ping", "help", "alive"]))
+@CMDErrorHandler
+async def startg(_, message: Message):
+    buttons = [
+            [
                 InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇꜱ', url='https://t.me/movie_time_botonly'),
                 InlineKeyboardButton('👁️ ᴀɴɪᴍᴇꜱ', url='https://t.me/animeonlyda')
             ],
@@ -74,5 +85,9 @@ async def reportCMD(_, message: Message):
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="""𝑰 𝒂𝒎 𝑶𝒏𝒍𝒚 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏𝒍𝒚 𝑩𝒆𝒍𝒐𝒘 𝑴𝒆𝒏𝒕𝒊𝒐𝒏𝒆𝒅 𝑮𝒓𝒐𝒖𝒑 📀
-    """,reply_markup=reply_markup)
+    try:
+        await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
+            """𝑯𝒊 𝑰 𝒂𝒎 𝑨𝑵𝑰𝑴𝑬♨︎_♨︎ 𝑺𝒆𝒂𝒓𝒄𝒉 𝑩𝒐𝒕\n 𝑪𝒍𝒊𝒄𝒌 /search animename or /s animename""",reply_markup=reply_markup
+        )
+    except:
+        return
