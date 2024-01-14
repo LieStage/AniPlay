@@ -70,5 +70,5 @@ async def reportCMD(_, message: Message):
                 InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(buttons)
+    reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="Hi i am Only Provide Animes Here \n 🕳️@animeonlyda",reply_markup=reply_markup)
