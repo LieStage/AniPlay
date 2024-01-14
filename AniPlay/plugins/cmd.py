@@ -19,16 +19,16 @@ async def start(_, message: Message):
 QUERY = "**Search Results:** `{}`"
 
 
-@app.on_message(filters.group)
+@app.on_message(filters.group & filters.command(["search", "s"]))
 @CMDErrorHandler
 async def searchCMD(_, message: Message):
     try:
         group_id = message.chat.id
         user = message.from_user.id
         # query=message.command
-        query = " ".join(message.command[:])
-        # if query == "":
-        #     return await message.reply_text("Give me something to search ^_^")
+        query = " ".join(message.command[1:])
+        if query == "":
+            return await message.reply_text("Give me something to search ^_^ like /search animename")
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(
