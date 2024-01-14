@@ -11,16 +11,18 @@ from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 async def start(_, message: Message):
     buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/movie_time_botonly')
+                InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇꜱ', url='https://t.me/movie_time_botonly'),
+                InlineKeyboardButton('👁️ ᴀɴɪᴍᴇꜱ', url='https://t.me/animeonlyda')
             ],
             [
-                InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
+                InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', url='https://t.me/fligher'),
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
-            "Bot Is Online...\n\nYou Can Search Animes\n Click /use ",reply_markup=reply_markup
+            """𝑯𝒊 𝑰 𝒂𝒎 𝑨𝑵𝑰𝑴𝑬♨︎_♨︎ 𝑺𝒆𝒂𝒓𝒄𝒉 𝑩𝒐𝒕 
+            𝑰 𝑪𝒂𝒏 𝑷𝒓𝒐𝒗𝒊𝒅𝒆 𝑨𝒏𝒊𝒎𝒆𝒔 𝒘𝒊𝒕𝒉 𝑺𝒕𝒓𝒆𝒂𝒎😄 𝒂𝒏𝒅 𝑫𝒐𝒘𝒏𝒍𝒂𝒐𝒅 📥 𝑶𝒑𝒕𝒊𝒐𝒏 𝑪𝒍𝒊𝒄𝒌 /use""",reply_markup=reply_markup
         )
     except:
         return
@@ -41,14 +43,14 @@ async def searchCMD(_, message: Message):
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(
-            f"{QUERY.format(query)}\n\n© {message.from_user.mention}",
+            f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention}",
             reply_markup=button,
         )
     except Exception as e:
         print(e)
         try:
             return await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
-                "**Anime Not Found...**\n\nProbably Incorrect Name, Try again"
+                "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
             )
         except:
             return
@@ -64,11 +66,13 @@ async def reportCMD(_, message: Message):
 async def reportCMD(_, message: Message):
     buttons = [
             [
-                InlineKeyboardButton('🤖 Updates', url='https://t.me/movie_time_botonly')
+                InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇꜱ', url='https://t.me/movie_time_botonly'),
+                InlineKeyboardButton('👁️ ᴀɴɪᴍᴇꜱ', url='https://t.me/animeonlyda')
             ],
             [
-                InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
+                InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', url='https://t.me/fligher'),
             ]
             ]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="Hi i am Only Provide Animes Here \n 🕳️@animeonlyda",reply_markup=reply_markup)
+    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="""𝑰 𝒂𝒎 𝑶𝒏𝒍𝒚 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏𝒍𝒚 𝑩𝒆𝒍𝒐𝒘 𝑴𝒆𝒏𝒕𝒊𝒐𝒏𝒆𝒅 𝑮𝒓𝒐𝒖𝒑 📀
+    """,reply_markup=reply_markup)
