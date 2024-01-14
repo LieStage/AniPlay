@@ -39,7 +39,7 @@ async def searchCMD(_, message: Message):
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(
             f"{QUERY.format(query)}\n\n© {message.from_user.mention}",
-            reply_markup=button,reply_markup=keyboard_inline,
+            reply_markup=button,
         )
     except Exception as e:
         print(e)
