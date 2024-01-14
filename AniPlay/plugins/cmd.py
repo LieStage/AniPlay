@@ -25,8 +25,8 @@ async def searchCMD(_, message: Message):
     try:
         group_id = message.chat.id
         user = message.from_user.id
-        query=message.command
-        # query = " ".join(message.command[1:])
+        # query=message.command
+        query = " ".join(message.command[:])
         # if query == "":
         #     return await message.reply_text("Give me something to search ^_^")
         data = AnimeDex.search(query)
