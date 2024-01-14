@@ -4,6 +4,12 @@ from AniPlay import app
 from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
 from AniPlay.plugins.ErrorHandler import CMDErrorHandler  
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+button1 = InlineKeyboardButton(text="OWNER👨🏻‍💻", url="https://t.me/fligher") 
+button2 = InlineKeyboardButton(text="CHANNEL🧿", url="https://t.me/movie_time_botonly") 
+keyboard_inline = InlineKeyboardMarkup().add(button1, button2) 
+
 
 
 @app.on_message(filters.command(["start", "ping", "help", "alive"]))
@@ -11,7 +17,7 @@ from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 async def start(_, message: Message):
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
-            "Bot Is Online...\n\nYou Can Search Animes\n Click /use "
+            "Bot Is Online...\n\nYou Can Search Animes\n Click /use ",reply_markup=keyboard_inline
         )
     except:
         return
@@ -33,7 +39,7 @@ async def searchCMD(_, message: Message):
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(
             f"{QUERY.format(query)}\n\n© {message.from_user.mention}",
-            reply_markup=button,
+            reply_markup=button,reply_markup=keyboard_inline,
         )
     except Exception as e:
         print(e)
