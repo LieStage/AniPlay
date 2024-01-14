@@ -11,7 +11,7 @@ from AniPlay.plugins.ErrorHandler import CMDErrorHandler
 async def start(_, message: Message):
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
-            "Bot Is Online...\n\nSearch Animes Using /search animename or /s animename"
+            "Bot Is Online...\n\nYou Can Search Animes\n Click /use "
         )
     except:
         return
@@ -49,3 +49,8 @@ async def searchCMD(_, message: Message):
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
     await message.reply_photo("https://graph.org/file/e93e046cdc24a803990d1.jpg",caption="Report Bugs Here: @TRUMBOTS")
+
+@app.on_message(filters.command(["use"]))
+@CMDErrorHandler
+async def reportCMD(_, message: Message):
+    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="Hi i am Only Provide Animes Here \n 🕳️@animeonlyda")
