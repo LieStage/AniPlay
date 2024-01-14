@@ -17,7 +17,7 @@ async def start(_, message: Message):
                 InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
             ]
             ]
-        reply_markup = InlineKeyboardMarkup(buttons)
+    reply_markup = InlineKeyboardMarkup(buttons)
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
             "Bot Is Online...\n\nYou Can Search Animes\n Click /use ",reply_markup=reply_markup
