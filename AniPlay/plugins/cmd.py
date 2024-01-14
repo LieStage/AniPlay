@@ -1,23 +1,26 @@
-from pyrogram.types import Message
+from pyrogram.types import Message,InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import filters
 from AniPlay import app
 from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
 from AniPlay.plugins.ErrorHandler import CMDErrorHandler  
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
-button1 = InlineKeyboardButton(text="OWNER👨🏻‍💻", url="https://t.me/fligher") 
-button2 = InlineKeyboardButton(text="CHANNEL🧿", url="https://t.me/movie_time_botonly") 
-keyboard_inline = InlineKeyboardMarkup().add(button1, button2) 
-
 
 
 @app.on_message(filters.command(["start", "ping", "help", "alive"]))
 @CMDErrorHandler
 async def start(_, message: Message):
+    buttons = [
+            [
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/movie_time_botonly')
+            ],
+            [
+                InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
     try:
         await message.reply_photo("https://graph.org/file/d2d4bec6d5a46b27724af.jpg",caption=
-            "Bot Is Online...\n\nYou Can Search Animes\n Click /use ",reply_markup=keyboard_inline
+            "Bot Is Online...\n\nYou Can Search Animes\n Click /use ",reply_markup=reply_markup
         )
     except:
         return
@@ -59,4 +62,13 @@ async def reportCMD(_, message: Message):
 @app.on_message(filters.command(["use"]))
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
-    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="Hi i am Only Provide Animes Here \n 🕳️@animeonlyda")
+    buttons = [
+            [
+                InlineKeyboardButton('🤖 Updates', url='https://t.me/movie_time_botonly')
+            ],
+            [
+                InlineKeyboardButton('ℹ️ Help', url='https://t.me/fligher'),
+            ]
+            ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="Hi i am Only Provide Animes Here \n 🕳️@animeonlyda",reply_markup=reply_markup)
