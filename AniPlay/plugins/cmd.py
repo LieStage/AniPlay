@@ -72,9 +72,16 @@ async def reportCMD(_, message: Message):
     await message.reply_photo("https://www.shutterstock.com/image-vector/young-man-anime-style-character-600nw-2313503433.jpg",caption="""𝑰 𝒂𝒎 𝑶𝒏𝒍𝒚 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏𝒍𝒚 𝑩𝒆𝒍𝒐𝒘 𝑴𝒆𝒏𝒕𝒊𝒐𝒏𝒆𝒅 𝑮𝒓𝒐𝒖𝒑 📀
     """,reply_markup=reply_markup)
 
+
+@app.on_message(filters.private & filters.command(["search", "s"]))
+@CMDErrorHandler
+async def searchCMD(_, message: Message):
+    await message.reply_text("Ask Animes Only Here @animeonlyda\nDon't Be Silly Bro!!")
+
+
 @app.on_message(filters.group & filters.command(["start", "ping", "help", "alive"]))
 @CMDErrorHandler
-async def startg(_, message: Message):
+async def start(_, message: Message):
     buttons = [
             [
                 InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇꜱ', url='https://t.me/movie_time_botonly'),
