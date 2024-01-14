@@ -6,7 +6,7 @@ from AniPlay.plugins.button import BTN
 from AniPlay.plugins.ErrorHandler import CMDErrorHandler  
 
 
-@app.on_message(filters.command(["start", "ping", "help", "alive"]))
+@app.on_message(filters.private & filters.command(["start", "ping", "help", "alive"]))
 @CMDErrorHandler
 async def start(_, message: Message):
     buttons = [
