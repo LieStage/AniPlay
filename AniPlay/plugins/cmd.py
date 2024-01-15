@@ -54,6 +54,30 @@ async def searchCMD(_, message: Message):
         except:
             return
 
+@app.on_message(filters.group & filters.incoming)
+@CMDErrorHandler
+async def searchCMD(_, message: Message):
+    try:
+        group_id = message.chat.id
+        user = message.from_user.id
+        query= message[0:20]
+        if query == "":
+            return await message.reply_text("Give me something to search ^_^ like one piece,jujutsu kaisen,naruto")
+        data = AnimeDex.search(query)
+        button = BTN.searchCMD(user, data, query)
+        await message.reply_text(
+            f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention}",
+            reply_markup=button,
+        )
+    except Exception as e:
+        print(e)
+        try:
+            return await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
+                "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
+            )
+        except:
+            return
+
 
 @app.on_message(filters.command(["report"]))
 @CMDErrorHandler
