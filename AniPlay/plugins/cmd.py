@@ -54,7 +54,7 @@ async def searchCMD(_, message: Message):
                 "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
             )
             time.sleep(7)
-        await err.delete()
+            await err.delete()
             
         except: 
             return
