@@ -64,22 +64,22 @@ async def searchCMD(_, message: Message):
         user = message.from_user.id
         query = "".join(message.text)
         if query == "":
-            res = await message.reply_text("Give me something to search ^_^ like one piece,jujutsu kaisen,naruto")
+            return await message.reply_text("Give me something to search ^_^ like one piece,jujutsu kaisen,naruto")
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
-        await message.reply_text(
+        res = await message.reply_text(
             f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention}",
             reply_markup=button,
         )
         
-        await res.delete()
+        await res.delete(5)
     except Exception as e:
         print(e)
         try:
             err= await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
                 "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
             )
-            await err.delete()
+            await err.delete(5)
         except:
             return
 
