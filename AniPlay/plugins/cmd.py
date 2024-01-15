@@ -6,7 +6,7 @@ from AniPlay.plugins.AnimeDex import AnimeDex
 from AniPlay.plugins.button import BTN
 from AniPlay.plugins.ErrorHandler import CMDErrorHandler  
 
-
+#welcome msg for private by @fligher
 @app.on_message(filters.private & filters.command(["start", "ping", "help", "alive"]))
 @CMDErrorHandler
 async def start(_, message: Message):
@@ -50,10 +50,13 @@ async def searchCMD(_, message: Message):
     except Exception as e:
         print(e)
         try:
-            return await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
+            err= await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
                 "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
             )
-        except:
+            time.sleep(7)
+        await err.delete()
+            
+        except: 
             return
 
 #without command '/search' modified by @fligher
@@ -69,10 +72,10 @@ async def searchCMD(_, message: Message):
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
         res = await message.reply_text(
-            f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention}",
+            f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention} \n This Requested was deleted within 30sec⌛",
             reply_markup=button,
         )
-        time.sleep(5)
+        time.sleep(30)
         await res.delete()
     except Exception as e:
         print(e)
@@ -80,7 +83,8 @@ async def searchCMD(_, message: Message):
             err= await message.reply_photo("https://graph.org/file/a818157c0c880e6863ef0.jpg",caption=
                 "**Anime Not Found...**\n\nProbably Incorrect Name, Try again \n\n Try like One Piece not onepiece"
             )
-            await err.delete(5)
+            time.sleep(5)
+            await err.delete()
         except:
             return
 
