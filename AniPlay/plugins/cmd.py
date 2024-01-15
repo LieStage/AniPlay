@@ -71,8 +71,8 @@ async def searchCMD(_, message: Message):
             f"{QUERY.format(query)}\n\n ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ © {message.from_user.mention}",
             reply_markup=button,
         )
-        
-        await res.delete(5)
+        time.sleep(5)
+        await res.delete()
     except Exception as e:
         print(e)
         try:
