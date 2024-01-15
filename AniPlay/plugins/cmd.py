@@ -54,13 +54,14 @@ async def searchCMD(_, message: Message):
         except:
             return
 
+#without command '/search' modified by @fligher
 @app.on_message(filters.group & filters.incoming & filters.text)
 @CMDErrorHandler
 async def searchCMD(_, message: Message):
     try:
         group_id = message.chat.id
         user = message.from_user.id
-        query = " ".join(message.text)
+        query = "".join(message.text)
         if query == "":
             return await message.reply_text("Give me something to search ^_^ like one piece,jujutsu kaisen,naruto")
         data = AnimeDex.search(query)
@@ -79,11 +80,21 @@ async def searchCMD(_, message: Message):
             return
 
 
+#private search restricted
+@app.on_message(filters.private & filters.incoming & filters.text)
+@CMDErrorHandler
+async def searchCMD(_, message: Message):
+    await message.reply_text("Ask Animes Only Here @animeonlyda\nDon't Be Silly Bro!!")
+
+
+
+#report command
 @app.on_message(filters.command(["report"]))
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
     await message.reply_photo("https://graph.org/file/e93e046cdc24a803990d1.jpg",caption="Report Bugs Here: @TRUMBOTS")
 
+#use command
 @app.on_message(filters.command(["use"]))
 @CMDErrorHandler
 async def reportCMD(_, message: Message):
