@@ -60,7 +60,7 @@ async def searchCMD(_, message: Message):
     try:
         group_id = message.chat.id
         user = message.from_user.id
-        query= message[0:20]
+        query = " ".join(message.incoming[:])
         if query == "":
             return await message.reply_text("Give me something to search ^_^ like one piece,jujutsu kaisen,naruto")
         data = AnimeDex.search(query)
